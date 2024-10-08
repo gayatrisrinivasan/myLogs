@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Logs</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="home.html"><img src="../images/light-logo.png" alt="My Log"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item mx-4"><a class="nav-link" href="https://github.com/gayatrisrinivasan" target="_blank">GitHub</a></li>
+                    <li class="nav-item mx-4"><a class="nav-link" href="https://www.linkedin.com/in/gayatrii04/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Highlighted Article Section -->
+    <div class="highlighted-article container my-5">
+        <div class="card shadow-sm border-0 rounded">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="text-muted">Oct 08</h5>
+                        <h2 class="text-success">Duolingo's Notification Algorithm: Gamifying Engagement and Learning</h2>
+                        <p class="mb-4">An in-depth look at how Duolingo's Notification Bandit Algorithm uses AI and the forgetting curve to enhance user engagement, retention, and learning outcomes through personalized notifications.</p>
+                        <a href="../Duolingo's Notification Algorithm Gamifying Engagement and Learning/" class="btn btn-outline-primary rounded-pill mt-3">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../images/case-study-1.png" alt="Highlight article image" class="img-fluid rounded-end">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Section by Tags -->
+    <div class="container mt-5">
+        <h2 class="tag-header text-center">Explore Blogs by Tags</h2>
+
+        <!-- Tag Filter -->
+        <div class="btn-group my-4 d-flex justify-content-center" role="group">
+            <button type="button" class="btn" onclick="filterBlogs('all')">All</button>
+            <button type="button" class="btn" onclick="filterBlogs('case-study')">Case Studies</button>
+            <button type="button" class="btn" onclick="filterBlogs('ai')">Artificial Intelligence</button>
+        </div>
+
+        <!-- Blog Cards Section -->
+        <div class="row">
+            <a href="../Duolingo's Notification Algorithm Gamifying Engagement and Learning/">
+                <div class="col-md-4 blog-card" data-category="case-study ai">
+                    <img src="../images/case-study-1.png" class="img-fluid" alt="Research Blog Image">
+                    <p class="blog-date">Oct 08</p>
+                    <h5 class="blog-title">Duolingo's Notification Algorithm Gamifying Engagement and Learning</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>&copy; 2024 Gayatri Srinivasan.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS for Filtering -->
+    <script>
+        function filterBlogs(category) {
+            const blogCards = document.querySelectorAll('.blog-card');
+            blogCards.forEach(card => {
+                const categories = card.dataset.category.split(' '); // Split the categories by space
+                if (category === 'all' || categories.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

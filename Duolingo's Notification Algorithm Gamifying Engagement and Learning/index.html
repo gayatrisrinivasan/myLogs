@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - My Logs</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/./favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/./favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/./apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="My Logs" />
+    <link rel="manifest" href="/favicon/./site.webmanifest" />  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Cormorant+Garamond:wght@600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="../homepage/home.html"><img class="logo" src="..\images\light-logo.png" alt="My Logs"></a> <!-- Added margin for right shift -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> <!-- Centering links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="../homepage/home.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="https://github.com/gayatrisrinivasan" target="_blank">GitHub</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="https://www.linkedin.com/in/gayatrii04/" target="_blank">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>    
+
+    <!-- Main Blog Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center blogHead">
+                <h1 class="display-4 fw-bold blogTitle">Duolingo's Notification Algorithm: Gamifying Engagement and Learning</h1>
+                <p class="lead">An in-depth look at how Duolingo's Notification Bandit Algorithm uses AI and the forgetting curve to enhance user engagement, retention, and learning outcomes through personalized notifications.                </p>
+                <p class="text-muted">
+                    <span>Oct 08 2024</span> |
+                    <a href="https://www.linkedin.com/in/gayatri-srinivasan" target="_blank">Gayatri Srinivasan</a>
+                </p>
+                <hr class="my-4">
+                <img src="images/Frame 5.png" class="img-fluid rounded blogImage" alt="Blog Image">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <article>
+                    <h3>Introduction</h3>
+                    <p><strong>Duolingo</strong> is one of the most popular language-learning apps, with millions of users worldwide learning new languages. Its mission
+                         is to provide free education for everyone, promoting equality in learning. Since its launch in 2012, Duolingo has faced competition 
+                         from other language-learning apps, such as Babbel.</p>
+
+                    <p>Babbel, like many other apps of its time, focused on a structured and comprehensive approach to language learning, emphasizing grammar, 
+                        natural language usage, and conversational skills. In contrast, Duolingo adopted a more gamified approach, incorporating elements such 
+                        as XP points, levels, and rewards to make learning more engaging and enjoyable.</p>
+
+                        <img src="images/Frame 6.png" class="float-start img-fluid rounded blogImage" alt="Additional Image">
+
+                    <p>However, Duolingo initially faced challenges with user engagement. Many users stopped using the app after a short period, leading to a high drop-off rate. The early versions lacked interactive elements and a well-organized content structure, contributing to these challenges. Despite this, Duolingo gained significant popularity by 2013, thanks to frequent updates that improved content and introduced more gamified features. By 2014, Duolingo had reached 10 million users and continued developing various features to enhance user engagement.                    </p>
+
+                    <p>User engagement is crucial to Duolingo’s mission, as it not only fosters loyalty but also generates revenue through advertisements (for free plans) and subscriptions like Super Duolingo. Engaged users improve their language skills and spend their time more productively compared to time spent on social media. To enhance engagement, Duolingo implemented several techniques, including Streaks, which encourage daily practice; weekly leaderboards for competing with other users; monthly challenges; interactive stories; friend streaks; widget reminders; and notification reminders, among others.                    </p>
+
+                    <img src="images/Frame 7.png" class="float-end img-fluid rounded blogImage" alt="Additional Image">
+
+                    <p>This case study will focus on <strong>Duolingo’s Mobile Notifications system</strong>. Notifications remind users to complete their daily lessons and maintain their streak, with the brand’s mascot, Duo, often delivering these reminders. Initially, Duolingo's push notification system was simple and straightforward, sending random notifications from a pre-selected pool.                    </p>
+
+                    <p>In 2019, Duolingo introduced the <strong>Notification Bandit Algorithm</strong>, which optimizes recurring notifications by personalizing reminders for each user, improving engagement rates, and helping users stay on track with their learning goals.                    </p>
+                    
+                    <h3>Notification Strategy</h3>
+
+                    <p>Notifications play a crucial role in Duolingo’s strategy to boost user engagement and retention. The <strong>Multi-Armed Bandit Algorithm</strong> is a key component of this approach. This intelligent system tracks a user's past behavior and identifies the optimal times and types of notifications for each individual. For instance, if a user is more responsive to notifications at 7 PM on Saturdays, the algorithm will prioritize sending push notifications at that time. By doing so, the system maximizes engagement rates and encourages users to return to the app.</p>
+
+                    <img style="max-width: 70%; height: auto; display: block; margin: 0 auto;" src="images/Frame 3.png" class="float-end img-fluid rounded blogImage" alt="Additional Image">
+
+                    <p>Duolingo employs a variation of this framework known as the <strong>Recovering Difference Softmax Algorithm</strong>. This algorithm personalizes pre-written notification messages (defined as templates) based on a user’s streak, chosen language, motivation, and other factors. These practice reminders are sent out based on user eligibility and the effectiveness of the messages.</p>
+
+                    <p>Additionally, Duolingo has developed strategic tactics for its notification templates. Statistics show that notifications are typically sent for a period of 7 days. If a user remains inactive and does not use Duolingo for 7 consecutive days, the notifications stop. The final notification often states, "These reminders don't seem to be working. We'll stop sending them for now." This message, which plays on users' sense of "guilt," has proven effective in bringing many users back to the app.</p>
+
+                    <img style="max-width: 60%; height: auto; display: block; margin: 0 auto;" src="images/Frame 4.png" class="img-fluid rounded blogImage" alt="Additional Image">
+
+                    <p>The main features of the <strong>Recovering Difference Softmax Algorithm</strong> include:</p>
+
+                    <ul>
+                        <li><strong>Performance Evaluation:</strong> The algorithm assesses each notification template’s performance using historical data, determining how well it engages users over time.</li>
+                        <li><strong>Relative Difference Metric:</strong> It calculates a relative difference score to compare the effectiveness of different notification templates.</li>
+                        <li><strong>Recency Penalty:</strong> To avoid overuse, the algorithm applies a recency penalty to recently sent templates, giving them time to "recover" their effectiveness.</li>
+                        <li><strong>Softmax Function:</strong> The algorithm uses the softmax function to balance exploration (testing new or less frequently used templates) with exploitation (selecting templates proven to be effective).</li>
+                    </ul>
+
+                    <p>This approach saves Duolingo from manually optimizing millions of notifications daily, resulting in a <strong>0.5% increase in daily active users (DAUs)</strong> and a <strong>2% increase in new user retention</strong>.</p>
+
+                    <h3>Challenges Overcome</h3>
+
+                    <p>One challenge was that different notifications target different types of learners. To compare templates fairly, Duolingo devised a method to only compare notifications sent to similar types of learners. Another challenge was the <strong>novelty effect</strong>—when notifications are used too frequently, they lose their impact. Although the algorithm’s goal is to identify and reuse the best-performing templates, Duolingo's engineers had to ensure that notifications were spaced out over time to maintain their effectiveness.</p>
+
+                    <p>To address this, Duolingo incorporated <strong>spaced repetition</strong>, utilizing the forgetting curve, a fundamental concept in educational psychology introduced by Hermann Ebbinghaus. The forgetting curve illustrates how information is lost over time when there is no attempt to retain it.</p>
+
+                    <img src="images/Frame 8.png" class="img-fluid rounded blogImage" alt="Additional Image">
+
+                    <p>Duolingo leverages this principle to enhance learning by predicting when users are likely to forget a word and prompting them to review it at just the right moment. This approach not only reinforces memory retention but also optimizes the timing of notifications, allowing the algorithm to decide when a reminder can be reused without diminishing its effectiveness. By applying the forgetting curve, Duolingo ensures that users receive timely prompts that maximize their learning experience and keep them engaged.</p>
+
+                    <h3>Implementation</h3>
+                    <p>Duolingo collected extensive data to inform the algorithm. The platform generates millions of records weekly, which include user interactions, notification responses, and engagement patterns. This data is crucial for analyzing the effectiveness of different notification templates and refining the algorithm's performance.</p>
+
+                    <p>The testing process for the bandit algorithm was rigorous and iterative. During the early testing phases, improvements in user engagement became evident within weeks. The algorithm successfully helped learners complete lessons more frequently, encouraging users to return to Duolingo and fostering healthy study habits. Adjustments were made based on user feedback and engagement metrics to further enhance the algorithm’s effectiveness.</p>
+
+                    <h3>Results and Impact</h3>
+
+                    <p>The Bandit algorithm had to be fast enough to manage millions of practice reminders sent to learners every day. The system produced vast amounts of data that needed real-time analysis to ensure optimal performance.</p>
+
+                    <p>The results of implementing the bandit algorithm were significant. There was a noticeable increase in daily active users (DAUs) and new user retention rates. Users reported completing lessons more frequently, which contributed to a more consistent and engaged learning experience.</p>
+
+                    <p>As an active Duolingo user myself, I have personally experienced the positive impact of these notifications. They have consistently encouraged me to complete my lessons on time and maintain my streak, significantly influencing my language-learning journey on the platform.</p>
+
+                    <h3>Conclusion</h3>
+                    <p>In this case study, we explored Duolingo's innovative approach to enhancing user engagement through the development and implementation of the notification bandit algorithm. Duolingo, dedicated to providing free education and improving language learning experiences, faced significant challenges with user engagement and retention.</p>
+
+                    <p>To address these challenges, Duolingo leveraged the principles of the multi-armed bandit algorithm, specifically the Recovering Difference Softmax Algorithm, which personalizes notifications based on user behavior and preferences. This approach not only optimized the timing and content of reminders but also effectively managed the novelty effects associated with notification fatigue.</p>
+
+                    <p>The implementation of this algorithm yielded impressive results, including a 0.5% increase in daily active users and a 2% improvement in new user retention. Users experienced enhanced learning habits, with notifications encouraging timely lesson completion and fostering ongoing engagement.</p>
+
+                    <p>Through these strategies, Duolingo has successfully positioned itself as a leading language-learning platform, demonstrating the power of data-driven decision-making in improving user experiences and achieving educational goals.</p>
+
+                    <h3>References and Sources</h3>
+                    
+                    <ul>
+                        <li>Yancey, K. (2020). <a href="https://blog.duolingo.com/hi-its-duo-the-ai-behind-the-meme/"><i> Hi, It's Duo: The AI Behind the Meme.</i></a></li>
+                        <li>Yancey, K. (2021). <a href="https://blog.duolingo.com/how-we-learn-how-you-learn/#thestudentmodelandforgettingcurves"><i> How We Learn, How You Learn: The Student Model and Forgetting Curves.</i></a></li>
+                        <li>Ngrow. (2023). <a href="https://www.ngrow.ai/blog/decoding-duolingo-analyzing-the-effectiveness-of-their-push-notification-strategy"><i>  Decoding Duolingo: Analyzing the Effectiveness of Their Push Notification Strategy.</i></a></li>
+                        <li>Yancey, K. (2020). <a href="https://research.duolingo.com/papers/yancey.kdd20.pdf"><i> An Analysis of Duolingo’s Notification Strategy. KDD 2020.</i></a></li>
+                        <li>YourStory. (2024). <a href="https://yourstory.com/2024/08/green-owls-secret-duolingo-built-77-billion"><i> Green Owls Secret: How Duolingo Built a $77 Billion Empire.</i></a></li>
+                    </ul>
+
+                    <div class="container mt-5">
+                        <h3 class="text-center">Tags</h3>
+                        <div class="d-flex justify-content-center flex-wrap tags-container">
+                            <a href="#" class="tag-link">Case Studies</a>
+                            <a href="#" class="tag-link">Artificial Intelligence</a>
+                        </div>
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>&copy; 2024 Gayatri Srinivasan. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

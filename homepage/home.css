@@ -1,0 +1,256 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+@font-face {
+  font-family: 'Sohne-regular';
+  src: url('../Sohne/TestSöhne-Buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+
+  font-family: 'Sohne-bold';
+  src: url('../Sohne/TestSöhne-Dreiviertelfett.otf') format('opentype');
+  font-weight: 400;
+  font-style: bold;
+}
+
+.karla {
+  font-family: "Karla", serif;
+  font-optical-sizing: auto;
+  font-weight: 200px;
+  font-style: normal;
+}
+
+/* Global styles */
+body {
+    background-color: #fdf5ff;
+    color: #090e15;
+    font-family: 'Karla', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #090e15;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff9670;
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fdf5ff !important;
+    height: 80px;
+    padding-right: 30px;
+    box-shadow: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-nav .nav-item .nav-link {
+    margin-left: auto;
+    margin: 0;
+    padding: 10px 20px;
+    color: #777777 !important;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff7092 !important;
+}
+
+.navbar-collapse {
+    background-color: #fdf5ff;
+}
+
+.navbar-toggler {
+    border-color: #fdf5ff;
+    margin-right: 20px;
+}
+
+/* Highlighted Article Section */
+.highlighted-article {
+    padding: 40px 0;
+}
+
+/* Card Styling */
+.highlighted-article .card {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fdf5ff;
+}
+
+.highlighted-article h2 {
+    font-size: 2rem;
+    font-family: 'Sohne-bold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #6634b7 !important;
+}
+
+.highlighted-article p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.highlighted-article .btn-outline-primary {
+    border-radius: 4px !important;
+    background-color: #fec3d6;
+    border: none !important;
+    color: #090e15;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.highlighted-article .btn-outline-primary:hover {
+    background-color: #ff7092;
+    color: #fff;
+}
+
+.highlighted-article img {
+    border-radius: 0 20px 20px 0;
+}
+
+/* Parent Container for Cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Blog Card Styling */
+.blog-card {
+    background-color: #fdf5ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+    max-width: 300px;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-date {
+    color: #777;
+    font-size: 0.9rem;
+    padding-top: 5%;
+}
+
+.blog-title {
+    color: #090e15;
+    font-family: 'Sohne-bold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.tags-section {
+    margin-top: 20px;
+}
+
+.tag-header {
+    font-family: 'Sohne-bold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.tag-link {
+    display: inline-block;
+    background-color: #fec3d6;
+    color: #090e15;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.tag-link:hover {
+    background-color: #ff7092;
+    color: #ffffff;
+}
+
+/* Tag Filter Styling */
+.btn-group .btn {
+    background-color: #ffcbbe;
+    color: #090e15;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group .btn:hover, 
+.btn-group .btn:focus {
+    background-color: #ff9670;
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-group .btn.active {
+    background-color: #ff7092;
+    color: #ffffff;
+}
+
+/* Adjust padding for container */
+.container {
+    padding-top: 30px;
+}
+
+/* General Layout */
+body {
+    padding-top: 90px;
+    background-color: #fdf5ff;
+}
+
+footer {
+    background-color: #fdf5ff;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+    .cards-container {
+        justify-content: center; 
+    }
+    .blog-card {
+        flex: 1 1 calc(50% - 20px); 
+        max-width: 300px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .cards-container {
+        justify-content: center; /* Center cards for 1 per row */
+    }
+    .blog-card {
+        flex: 1 1 100%; /* 1 card per row */
+        max-width: 100%; /* Full width for very small screens */
+    }
+}
