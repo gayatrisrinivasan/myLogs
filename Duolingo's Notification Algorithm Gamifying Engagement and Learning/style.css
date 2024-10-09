@@ -26,7 +26,7 @@ body {
     color: #090e15;
     font-family: 'Karla', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 a {
@@ -115,31 +115,31 @@ article h2, article h3 {
 }
 
 p {
-  font-size: 1.2rem; /* Increase blog body text */
+  font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
 img {
   display: block;
-  margin: 0 auto 20px; /* This centers the image and adds space at the bottom */
-  max-width: 100%; /* Ensure the image is responsive */
+  margin: 0 auto 20px;
+  max-width: 100%; 
   height: auto;
 }
 
 img.float-start {
   float: left;
-  margin-right: 20px; /* Adds space to the right of the image */
-  margin-bottom: 20px; /* Adds space below the image */
-  max-width: 100%; /* Keep it responsive */
+  margin-right: 20px; 
+  margin-bottom: 20px; 
+  max-width: 100%; 
   height: auto;
 }
 
 img.float-end {
   float: right;
-  margin-left: 20px; /* Adds space to the left of the image */
-  margin-bottom: 20px; /* Adds space below the image */
-  max-width: 100%; /* Keep it responsive */
+  margin-left: 25px;
+  margin-bottom: 20px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -197,4 +197,13 @@ footer {
 /* Animations and transitions */
 .navbar-nav .nav-link, .tag-link, .blogImage {
     transition: all 0.3s ease;
+}
+
+/* Override float-start and float-end for smaller screens */
+@media (max-width: 600px) {
+  .float-start, .float-end {
+      float: none !important;
+      display: block; 
+      margin: 0 auto 15px; 
+  }
 }
